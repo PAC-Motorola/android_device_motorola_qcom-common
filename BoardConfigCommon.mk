@@ -91,9 +91,6 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
 
-# GPS
-BOARD_HAVE_NEW_QC_GPS := true
-
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 BOARD_USES_FLUENCE_INCALL := true
@@ -125,7 +122,6 @@ BOARD_USES_QC_TIME_SERVICES := true
 
 #TWRP
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
-TW_NO_USB_STORAGE := true
 TW_INTERNAL_STORAGE_PATH := "/data/media"
 TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
 BOARD_HAS_NO_REAL_SDCARD := true
@@ -165,6 +161,7 @@ BOARD_SEPOLICY_UNION += \
 	radio.te \
 	rild.te \
 	rmt.te \
+	sdcard_internal.te \
 	sdcardd.te \
 	sensors.te \
 	shell.te \
