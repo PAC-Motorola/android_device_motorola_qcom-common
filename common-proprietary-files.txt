@@ -7,14 +7,16 @@ lib/libaudioalsa.so
 bin/btnvtool
 bin/hci_qcomm_init
 
-# DRM
+# DRM (from mako)
 lib/libdrmdiag.so
 lib/libdrmfs.so
 lib/libdrmtime.so
-lib/libWVphoneAPI.so
 vendor/lib/drm/libdrmwvmplugin.so
+vendor/lib/mediadrm/libwvdrmengine.so
+vendor/lib/libdrmdecrypt.so
 vendor/lib/libwvdrm_L1.so
 vendor/lib/libwvm.so
+vendor/lib/libWVphoneAPI.so
 vendor/lib/libWVStreamControlAPI_L1.so
 
 # DxHDCP firmware
@@ -89,8 +91,10 @@ lib/libbabysit.so
 lib/libril-qcril-hook-oem.so
 
 # Time services
+-app/TimeService/TimeService.apk
 bin/time_daemon
 -lib/libtime_genoff.so
+lib/libTimeService.so
 
 # Touch firmware
 etc/firmware/cyttsp_8064_mtp.hex

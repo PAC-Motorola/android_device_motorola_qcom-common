@@ -63,6 +63,7 @@ camera_module_t HAL_MODULE_INFO_SYM = {
     .get_camera_info = camera_get_camera_info,
     .set_callbacks = NULL, /* remove compilation warnings */
     .get_vendor_tag_ops = NULL, /* remove compilation warnings */
+    .open_legacy = NULL, /* remove compilation warnings */
     .reserved = {0}, /* remove compilation warnings */
 };
 
@@ -164,6 +165,10 @@ char * camera_fixup_setparams(const char * settings)
     ALOGD("%s: original parameters:", __FUNCTION__);
     params.dump();
 #endif
+
+    /* Make sure that thumbnail size does not remain unset */
+    params.set(android::CameraParameters::KEY_JPEG_THUMBNAIL_WIDTH, "512");
+    params.set(android::CameraParameters::KEY_JPEG_THUMBNAIL_HEIGHT, "384");
 
     /* No 'zsl-values' mean JB camera, which needs 'mode' parameter set to 'high-quality-zsl'
      * to enable ZSL. Disable face detection in ZSL mode for JB blobs to prevent crash.
